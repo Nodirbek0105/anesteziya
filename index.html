@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Xirurgiyada og‘riqsizlantirish — narkoz tushunchasi va turlari
+    </title>
+    <meta
+      name="description"
+      content="Anesteziologiya asoslari: narkoz tushunchasi, umumiy, mintaqaviy va mahalliy og‘riqsizlantirish turlari, Guedel bosqichlari."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="#hero">Anesteziologiya</a>
+      <nav>
+        <a href="#tushuncha">Tushuncha</a><a href="#tarix">Tarix</a
+        ><a href="#turlari">Turlari</a><a href="#dorilar">Dorilar</a
+        ><a href="#baholash">Baholash</a><a href="#bosqichlar">Bosqichlar</a
+        ><a href="#davri">Narkoz davri</a><a href="#xavfsizlik">Xavfsizlik</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <h1><span>Og‘riqsiz</span> <span>jarrohlik</span></h1>
+            <p class="lead">
+              Xirurgiyada og‘riqsizlantirish: narkoz tushunchasi va uning
+              turlari.
+            </p>
+            <a class="btn" href="#tushuncha">O‘qishni boshlash</a>
+          </div>
+          <div class="monitor" aria-label="Bemor monitori (animatsiya)">
+            <canvas id="ecg1"></canvas>
+            <dl class="vitals">
+              <div>
+                <dt>YSS, urish/daq</dt>
+                <dd id="hr1">72</dd>
+              </div>
+              <div>
+                <dt>SpO₂, %</dt>
+                <dd id="sp1">99</dd>
+              </div>
+              <div>
+                <dt>EtCO₂, mm sim. ust.</dt>
+                <dd id="co1">36</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="tushuncha">
+        <div class="wrap">
+          <h2>Narkoz nima?</h2>
+          <p class="big">
+            <strong>Og‘riqsizlantirish (anesteziya)</strong> — operatsiya va
+            og‘riqli muolajalar vaqtida og‘riq sezgisini vaqtincha va qaytar
+            tarzda o‘chirish usullari majmuasi. <strong>Narkoz</strong> esa
+            uning umumiy shakli: dorilar markaziy asab tizimini tormozlaydi,
+            bemor ongsiz holatga tushadi.
+          </p>
+          <div class="triad">
+            <article>
+              <h3>Uyqu</h3>
+              <p>Ong o‘chadi, bemor operatsiyani sezmaydi va eslamaydi.</p>
+            </article>
+            <article>
+              <h3>Og‘riqsizlik</h3>
+              <p>
+                Analgeziya: og‘riq signallari miyaga yetib bormaydi yoki qayta
+                ishlanmaydi.
+              </p>
+            </article>
+            <article>
+              <h3>Mushak bo‘shashishi</h3>
+              <p>
+                Miorelaksatsiya: jarroh qorin bo‘shlig‘i va boshqa sohalarga
+                qulay kira oladi.
+              </p>
+            </article>
+          </div>
+          <p class="note">
+            Zamonaviy narkoz bu uch komponentning muvozanati: har biri o‘z
+            dorisi bilan boshqariladi, shuning uchun dozalar kichik va xavfsiz
+            bo‘ladi.
+          </p>
+        </div>
+      </section>
+
+      <section class="sec alt" id="tarix">
+        <div class="wrap">
+          <h2>Og‘riqsizlantirish tarixi</h2>
+          <ul class="hist">
+            <li>
+              <b>1846</b>
+              <div>
+                <h3>Efir narkozi</h3>
+                <p>
+                  16 oktabrda Boston shahrida stomatolog Uilyam Morton efir
+                  narkozi ostida operatsiyani omma oldida ko‘rsatdi. Bu sana
+                  narkoz davrining boshlanishi hisoblanadi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1847</b>
+              <div>
+                <h3>Xloroform va Pirogov</h3>
+                <p>
+                  Shotland akusheri Dj. Simpson xloroformni qo‘lladi. Rus
+                  jarrohi N. I. Pirogov esa efir narkozini harbiy dala
+                  sharoitida keng qo‘llab, uning samarasini ko‘rsatdi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1884</b>
+              <div>
+                <h3>Mahalliy anesteziya</h3>
+                <p>
+                  K. Koller kokainni ko‘z operatsiyalarida mahalliy
+                  og‘riqsizlantiruvchi sifatida ishlatdi. Keyinroq novokain va
+                  lidokain yaratildi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1898</b>
+              <div>
+                <h3>Spinal anesteziya</h3>
+                <p>
+                  Avgust Bier birinchi marta orqa miya suyuqligiga anestetik
+                  yuborib, spinal anesteziyani amaliyotga kiritdi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1934</b>
+              <div>
+                <h3>Vena ichiga narkoz</h3>
+                <p>
+                  Tiopental amaliyotga kirdi va induksiya tez, bemor uchun
+                  yoqimli bo‘ldi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1942</b>
+              <div>
+                <h3>Miorelaksantlar</h3>
+                <p>
+                  Griffit va Jonson kurare preparatini narkozda qo‘llab, mushak
+                  bo‘shashishini alohida boshqarish imkonini berdi.
+                </p>
+              </div>
+            </li>
+            <li>
+              <b>1980-yillar</b>
+              <div>
+                <h3>Propofol va monitoring</h3>
+                <p>
+                  Propofol keng tarqaldi, pulsoksimetriya va kapnografiya
+                  standartga aylanib, narkoz xavfsizligi keskin oshdi.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec" id="turlari">
+        <div class="wrap">
+          <h2>Og‘riqsizlantirish turlari</h2>
+          <div class="tabs" role="tablist" id="tabs">
+            <button role="tab" aria-selected="true" data-i="0">
+              Umumiy narkoz
+            </button>
+            <button role="tab" aria-selected="false" data-i="1">
+              Mintaqaviy
+            </button>
+            <button role="tab" aria-selected="false" data-i="2">
+              Mahalliy
+            </button>
+            <button role="tab" aria-selected="false" data-i="3">
+              Sedatsiya
+            </button>
+          </div>
+          <div
+            class="panel"
+            id="panel"
+            role="tabpanel"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="dorilar">
+        <div class="wrap">
+          <h2>Narkozda ishlatiladigan dorilar guruhlari</h2>
+          <div class="cards4">
+            <article>
+              <h3>Ingalyatsion anestetiklar</h3>
+              <p>Nafas yo‘li orqali beriladi, chuqurlikni boshqarish oson.</p>
+              <div class="chips">
+                <span>Sevofluran</span><span>Izofluran</span
+                ><span>Desfluran</span><span>Azot oksidi</span>
+              </div>
+            </article>
+            <article>
+              <h3>Vena ichiga anestetiklar</h3>
+              <p>
+                Tez uyquga olib keladi. Induksiya va qisqa operatsiyalar uchun.
+              </p>
+              <div class="chips">
+                <span>Propofol</span><span>Ketamin</span><span>Tiopental</span
+                ><span>Etomidat</span>
+              </div>
+            </article>
+            <article>
+              <h3>Opioid analgetiklar</h3>
+              <p>
+                Kuchli og‘riqsizlantirish beradi, nafasni susaytirishi mumkin.
+              </p>
+              <div class="chips">
+                <span>Fentanil</span><span>Morfin</span
+                ><span>Remifentanil</span>
+              </div>
+            </article>
+            <article>
+              <h3>Miorelaksantlar</h3>
+              <p>
+                Skelet mushaklarini bo‘shashtiradi. Qo‘llanganda o‘pka sun’iy
+                shamollatiladi.
+              </p>
+              <div class="chips">
+                <span>Suksametoniy</span><span>Rokuronium</span
+                ><span>Atrakuriy</span>
+              </div>
+            </article>
+            <article>
+              <h3>Mahalliy anestetiklar</h3>
+              <p>
+                Nerv bo‘ylab impulsni to‘xtatadi, faqat kerakli sohani
+                o‘chiradi.
+              </p>
+              <div class="chips">
+                <span>Lidokain</span><span>Bupivakain</span
+                ><span>Ropivakain</span><span>Novokain</span>
+              </div>
+            </article>
+            <article>
+              <h3>Yordamchi dorilar</h3>
+              <p>
+                Premedikatsiya, ko‘ngil aynishining oldini olish, antidotlar.
+              </p>
+              <div class="chips">
+                <span>Midazolam</span><span>Ondansetron</span
+                ><span>Atropin</span><span>Neostigmin</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="baholash">
+        <div class="wrap">
+          <h2>Operatsiyadan oldin baholash</h2>
+          <p class="big">
+            Anesteziolog bemorni operatsiyadan oldin ko‘radi: shikoyatlari,
+            allergiyasi, surunkali kasalliklari, ilgari olgan narkozlari va
+            ichayotgan dorilari haqida so‘raydi. Nafas yo‘li (og‘iz ochilishi,
+            bo‘yin harakati) ham tekshiriladi.
+          </p>
+          <div class="two">
+            <div>
+              <h3>ASA tasnifi</h3>
+              <table>
+                <tr>
+                  <th>Sinf</th>
+                  <th>Bemor holati</th>
+                </tr>
+                <tr>
+                  <td>ASA I</td>
+                  <td>Sog‘lom bemor</td>
+                </tr>
+                <tr>
+                  <td>ASA II</td>
+                  <td>
+                    Yengil surunkali kasallik (masalan, nazorat ostidagi
+                    gipertoniya)
+                  </td>
+                </tr>
+                <tr>
+                  <td>ASA III</td>
+                  <td>Og‘ir surunkali kasallik, faoliyat cheklangan</td>
+                </tr>
+                <tr>
+                  <td>ASA IV</td>
+                  <td>Doimiy hayotga xavf soluvchi kasallik</td>
+                </tr>
+                <tr>
+                  <td>ASA V</td>
+                  <td>Operatsiyasiz yashash ehtimoli kam bo‘lgan bemor</td>
+                </tr>
+                <tr>
+                  <td>ASA VI</td>
+                  <td>Miyasi o‘lgan, organ donori</td>
+                </tr>
+              </table>
+              <p class="muted small">
+                Favqulodda operatsiyaga “E” harfi qo‘shiladi.
+              </p>
+            </div>
+            <div>
+              <h3>Tayyorgarlik</h3>
+              <ul class="plain">
+                <li>Qon, siydik tahlili, EKG, zarur bo‘lsa rentgen</li>
+                <li>
+                  Reja asosidagi operatsiyadan oldin qattiq ovqat taxminan 6–8
+                  soat, tiniq suyuqlik 2 soat oldin to‘xtatiladi
+                </li>
+                <li>Chekishni to‘xtatish nafas asoratlarini kamaytiradi</li>
+                <li>Doimiy ichiladigan dorilar haqida shifokorga aytiladi</li>
+                <li>
+                  Olinadigan tish protezlari, taqinchoqlar va kontakt linzalar
+                  olib qo‘yiladi
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="bosqichlar">
+        <div class="wrap">
+          <h2>Narkoz chuqurligi: Guedel bosqichlari</h2>
+          <p class="muted">
+            Slayderni siljiting: bosqich o‘zgarganda bemor monitori ham
+            o‘zgaradi.
+          </p>
+          <div class="stage-grid">
+            <div class="monitor small">
+              <canvas id="ecg2"></canvas>
+              <dl class="vitals">
+                <div>
+                  <dt>YSS</dt>
+                  <dd id="hr2">72</dd>
+                </div>
+                <div>
+                  <dt>SpO₂</dt>
+                  <dd id="sp2">99</dd>
+                </div>
+                <div>
+                  <dt>EtCO₂</dt>
+                  <dd id="co2">36</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="stage-info">
+              <input
+                type="range"
+                id="stage"
+                min="0"
+                max="3"
+                step="1"
+                value="0"
+                aria-label="Narkoz bosqichi"
+              />
+              <div class="ticks">
+                <span>I</span><span>II</span><span>III</span><span>IV</span>
+              </div>
+              <div class="meter"><i id="meter"></i></div>
+              <h3 id="st-title"></h3>
+              <p id="st-text"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="davri">
+        <div class="wrap">
+          <h2>Narkoz davri</h2>
+          <ol class="timeline" id="timeline">
+            <li>
+              <h3>Premedikatsiya</h3>
+              <p>
+                Operatsiyadan oldin: tinchlantiruvchi dorilar, och qoringa
+                kelish.
+              </p>
+            </li>
+            <li>
+              <h3>Induksiya</h3>
+              <p>Vena orqali dori yuboriladi, bemor 30–60 soniyada uxlaydi.</p>
+            </li>
+            <li>
+              <h3>Intubatsiya</h3>
+              <p>Nafas yo‘liga naycha qo‘yiladi, o‘pka apparatga ulanadi.</p>
+            </li>
+            <li>
+              <h3>Ushlab turish</h3>
+              <p>
+                Gaz yoki vena dorilari bilan chuqurlik monitor ostida saqlanadi.
+              </p>
+            </li>
+            <li>
+              <h3>Uyg‘onish</h3>
+              <p>
+                Dorilar to‘xtatiladi, nafas va ong tiklanadi, naycha olinadi.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="sec alt" id="xavfsizlik">
+        <div class="wrap">
+          <h2>Monitoring va xavfsizlik</h2>
+          <div class="facts">
+            <div>
+              <b>5</b
+              ><span
+                >asosiy ko‘rsatkich uzluksiz kuzatiladi: EKG, qon bosimi, SpO₂,
+                EtCO₂, harorat</span
+              >
+            </div>
+            <div>
+              <b>6–8 soat</b
+              ><span
+                >reja asosidagi operatsiyadan oldin qattiq ovqat yeyilmaydi
+                (aspiratsiyadan saqlanish)</span
+              >
+            </div>
+            <div>
+              <b>1</b
+              ><span
+                >shifokor-anesteziolog butun operatsiya davomida bemor yonida
+                turadi</span
+              >
+            </div>
+          </div>
+          <div class="two">
+            <div>
+              <h3>Mumkin asoratlar</h3>
+              <ul class="plain">
+                <li>Ko‘ngil aynishi va qusish (eng ko‘p uchraydi)</li>
+                <li>Qon bosimi va yurak urishining pasayishi</li>
+                <li>Aspiratsiya: oshqozon tarkibining o‘pkaga tushishi</li>
+                <li>Allergik reaksiya va anafilaksiya</li>
+                <li>Tomoq og‘rig‘i, ovoz xirillashi (intubatsiyadan keyin)</li>
+                <li>
+                  Kam uchraydigan: malign gipertermiya, intraoperatsion
+                  uyg‘onish
+                </li>
+                <li>
+                  Spinal yoki epidural: bosh og‘rig‘i, qon bosimi tushishi,
+                  siydik ushlanishi
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Uyg‘onishdan keyin</h3>
+              <ul class="plain">
+                <li>Bemor reanimatsiya yoki uyg‘onish palatasida kuzatiladi</li>
+                <li>
+                  Og‘riq shkala bo‘yicha baholanib, dori bilan boshqariladi
+                </li>
+                <li>
+                  Birinchi soatlarda ko‘ngil aynishi, titroq, uyquchanlik normal
+                </li>
+                <li>
+                  Birinchi sutkada mashina haydash va muhim qaror qabul qilish
+                  tavsiya etilmaydi
+                </li>
+                <li>
+                  Ovqatlanish va yurish shifokor ruxsati bilan asta-sekin
+                  tiklanadi
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">
+            Narkozga kirishdan oldin xavf-foyda anesteziolog bilan muhokama
+            qilinadi va bemor rozilik beradi. Zamonaviy monitoring tufayli
+            jiddiy asoratlar kam uchraydi.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        Ta’lim maqsadidagi material. Tibbiy qaror uchun shifokorga murojaat
+        qiling.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

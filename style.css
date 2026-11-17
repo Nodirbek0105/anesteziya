@@ -1,0 +1,624 @@
+:root {
+  --ink: #0e2f2c;
+  --scrub: #14524c;
+  --paper: #f4f8f6;
+  --alt: #e4eeea;
+  --line: #c9dcd5;
+  --mon: #37e5a5;
+  --amber: #f0b13a;
+  --bad: #e5584b;
+  --text: #1b2b29;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+body {
+  font:
+    400 18px/1.7 "Source Serif 4",
+    Georgia,
+    serif;
+  color: var(--text);
+  background: var(--paper);
+}
+h1,
+h2,
+h3,
+.brand,
+.btn,
+nav,
+dt,
+.tabs button,
+.facts b {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.top {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background: rgba(14, 47, 44, 0.88);
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+}
+nav a {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+nav a:hover {
+  opacity: 1;
+}
+
+.hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 140px 0 90px;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+h1 {
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+h1 span {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+h1 span:nth-child(2) {
+  animation-delay: 0.18s;
+  color: var(--mon);
+}
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.lead {
+  margin: 28px 0 32px;
+  font-size: 21px;
+  max-width: 30ch;
+  color: #cfe3dd;
+  opacity: 0;
+  animation: rise 0.9s 0.45s forwards;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--mon);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(55, 229, 165, 0.35);
+}
+
+.monitor {
+  background: #06201e;
+  border: 1px solid #1d5a52;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow:
+    0 0 60px rgba(55, 229, 165, 0.12) inset,
+    0 30px 60px rgba(0, 0, 0, 0.35);
+}
+.monitor canvas {
+  width: 100%;
+  height: 190px;
+  display: block;
+}
+.monitor.small canvas {
+  height: 150px;
+}
+.vitals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+  border-top: 1px solid #1d5a52;
+  padding-top: 14px;
+}
+.vitals dt {
+  font-size: 12px;
+  color: #8fb8ae;
+  line-height: 1.3;
+}
+.vitals dd {
+  font:
+    700 38px/1.1 "Bricolage Grotesque",
+    sans-serif;
+  color: var(--mon);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s;
+}
+.vitals div:nth-child(2) dd {
+  color: #6fd0ff;
+}
+.vitals div:nth-child(3) dd {
+  color: var(--amber);
+}
+.monitor.warn dd {
+  color: var(--bad) !important;
+}
+
+.sec {
+  padding: 96px 0;
+}
+.alt {
+  background: var(--alt);
+}
+h2 {
+  font-size: clamp(30px, 4.4vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+  max-width: 20ch;
+}
+h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.big {
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+.big strong {
+  color: var(--scrub);
+}
+.muted {
+  color: #51655f;
+  margin-bottom: 28px;
+}
+.note {
+  margin-top: 32px;
+  max-width: 62ch;
+  padding-left: 18px;
+  border-left: 4px solid var(--mon);
+}
+.triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 44px;
+}
+.triad article {
+  padding: 28px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
+.triad article:hover {
+  transform: translateY(-4px);
+  border-color: var(--scrub);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.tabs button {
+  padding: 11px 20px;
+  border: 1.5px solid var(--scrub);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--scrub);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--scrub);
+  color: #fff;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  min-height: 320px;
+  animation: swap 0.45s ease;
+}
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.panel ul {
+  padding-left: 20px;
+}
+.panel li {
+  margin-bottom: 8px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+.chips span {
+  padding: 5px 13px;
+  border-radius: 6px;
+  background: var(--alt);
+  font:
+    600 14px "Bricolage Grotesque",
+    sans-serif;
+  color: var(--scrub);
+}
+.panel h4 {
+  font:
+    700 15px "Bricolage Grotesque",
+    sans-serif;
+  color: #51655f;
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--scrub);
+  height: 32px;
+  cursor: pointer;
+}
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  font:
+    700 15px "Bricolage Grotesque",
+    sans-serif;
+  color: var(--scrub);
+  padding: 0 6px;
+}
+.meter {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--alt);
+  margin: 14px 0 24px;
+  overflow: hidden;
+}
+.meter i {
+  display: block;
+  height: 100%;
+  width: 25%;
+  background: var(--scrub);
+  border-radius: 5px;
+  transition:
+    width 0.6s cubic-bezier(0.3, 0.9, 0.3, 1),
+    background 0.4s;
+}
+#st-text {
+  min-height: 7em;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  position: relative;
+  counter-reset: s;
+}
+.timeline::before,
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 0;
+  height: 3px;
+  background: var(--line);
+}
+.timeline::before {
+  right: 0;
+}
+.timeline::after {
+  background: var(--scrub);
+  width: 0;
+  transition: width 1.8s ease 0.2s;
+}
+.timeline.in::after {
+  width: 100%;
+}
+.timeline li {
+  position: relative;
+  padding-top: 56px;
+  counter-increment: s;
+}
+.timeline li::before {
+  content: counter(s);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--scrub);
+  display: grid;
+  place-items: center;
+  font:
+    700 16px "Bricolage Grotesque",
+    sans-serif;
+  z-index: 1;
+}
+.timeline li p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.facts div {
+  padding: 28px;
+  background: var(--ink);
+  color: #d8eae5;
+  border-radius: 6px;
+}
+.facts b {
+  display: block;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--mon);
+  margin-bottom: 10px;
+}
+.facts span {
+  font-size: 16px;
+  line-height: 1.5;
+  display: block;
+}
+footer {
+  padding: 36px 0;
+  background: var(--ink);
+  color: #9fbdb5;
+  font-size: 15px;
+}
+
+@media (max-width: 860px) {
+  nav {
+    display: none;
+  }
+  .hero-grid,
+  .stage-grid,
+  .panel,
+  .triad,
+  .facts {
+    grid-template-columns: 1fr;
+  }
+  .sec {
+    padding: 64px 0;
+  }
+  .hero {
+    padding-top: 110px;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-left: 6px;
+  }
+  .timeline::before,
+  .timeline::after {
+    top: 0;
+    left: 19px;
+    width: 3px;
+    height: 100%;
+    right: auto;
+  }
+  .timeline::after {
+    width: 3px;
+    height: 0;
+    transition: height 1.8s ease 0.2s;
+  }
+  .timeline.in::after {
+    width: 3px;
+    height: 100%;
+  }
+  .timeline li {
+    padding: 4px 0 8px 62px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  h1 span,
+  .lead {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hist {
+  list-style: none;
+  padding: 0;
+  border-left: 3px solid var(--line);
+  margin-left: 6px;
+}
+.hist li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  padding: 0 0 30px 26px;
+  position: relative;
+}
+.hist li::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--scrub);
+}
+.hist b {
+  font:
+    800 26px/1.3 "Bricolage Grotesque",
+    sans-serif;
+  color: var(--scrub);
+}
+.hist p {
+  max-width: 60ch;
+  font-size: 17px;
+}
+.cards4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.cards4 article {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
+.cards4 article:hover {
+  transform: translateY(-4px);
+  border-color: var(--scrub);
+}
+.cards4 p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+.cards4 .chips {
+  margin: 14px 0 0;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  margin-top: 36px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 16px;
+}
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.4;
+}
+th {
+  font:
+    700 14px "Bricolage Grotesque",
+    sans-serif;
+  color: #51655f;
+}
+td:first-child {
+  font:
+    700 16px "Bricolage Grotesque",
+    sans-serif;
+  color: var(--scrub);
+  white-space: nowrap;
+}
+.small {
+  font-size: 14px;
+  margin: 10px 0 0;
+}
+.plain {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+.plain li {
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+@media (max-width: 860px) {
+  .cards4,
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .hist li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+.pc {
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 2px 0 14px;
+}
+.panel h4 {
+  margin-top: 6px;
+}
