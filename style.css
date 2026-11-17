@@ -660,6 +660,10 @@ td:first-child {
   }
 }
 #nl-badge{
-  display:none;
+  display:none !important;
+
+}
+.nl-badge{
+  display:none !important
 
 }
